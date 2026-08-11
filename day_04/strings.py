@@ -77,3 +77,31 @@ acronym_2 = ''.join(word[0].upper() for word in "Coding For All".split())
 index_C = 'Coding For All'.index('C')
 index_F = 'Coding For All'.index('F')
 last_index_l = 'Coding For All People'.rfind('l')
+
+conjunction = 'You cannot end a sentence with because because because is a conjunction'
+print("First index of because: ", conjunction.find('because'))
+print("Last index of because: ", conjunction.rfind('because'))
+
+conjunction = conjunction.replace('because because because ', '')
+print("Remove \'because because because\'", conjunction)
+
+company = '   Coding For All      '
+company = company[company.index('C'):company.rfind('l') + 1]
+print(company)
+
+check_valid_identifier = '30DaysOfPython'
+print(check_valid_identifier.isidentifier())
+check_valid_identifier = 'thirty_days_of_python'
+print(check_valid_identifier.isidentifier())
+
+python_libraries = ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']
+python_libraries_string = '# '.join(python_libraries)
+print(python_libraries_string)
+
+print('I am enjoying this challenge.\nI just wonder what is next.')
+
+print('Name\tAge\tCountry\tCity\nAsabeneh\t250\tFinland\tHelsinki')
+
+radius = 10
+area = int(3.14 * radius ** 2)
+print(f'The area of a circle with radius {radius} is {area} meters square.')
