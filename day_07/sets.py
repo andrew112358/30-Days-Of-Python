@@ -105,3 +105,35 @@ it_companies = {'Facebook', 'Google', 'Microsoft',
 A = {19, 22, 24, 20, 25, 26}
 B = {19, 22, 20, 25, 26, 24, 28, 27}
 age = [22, 19, 24, 25, 26, 24, 25, 24]
+
+print(f'Length of the it companies set {len(it_companies)}')
+
+it_companies.add('Twitter')
+print(it_companies)
+
+it_companies.update(['Instagram', 'Meta', 'Dell'])
+print(it_companies)
+
+it_companies.pop()
+print(it_companies)
+
+# diff between remove and discard is that if you try to remove something thats not in the set there will be an error
+
+C = A | B
+print(C)
+
+print(A & B)
+
+print(A.issubset(B))
+
+print(A.isdisjoint(B))
+
+A = A.union(B)
+B = B.union(A)
+
+print(A ^ B)
+
+del it_companies
+del A
+del B
+del age
