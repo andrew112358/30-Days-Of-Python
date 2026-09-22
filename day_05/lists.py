@@ -71,7 +71,7 @@ print(does_exist)
 does_exist = 'lime' in fruits
 print(does_exist)
 
-# ? use appned to add an item to the end
+# ? use append to add an item to the end
 fruits = ['banana', 'orange', 'mango', 'lemon']
 fruits.append('apple')
 print(fruits)
