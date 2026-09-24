@@ -104,13 +104,43 @@ def rgb_color_gen():
     return f'rgb({randint(0, 255)},{randint(0, 255)},{randint(0, 255)})'
 
 
-def list_of_hexa_colors():
+def list_of_hexa_colors(num):
     symbols = string.digits + 'abcdef'
-    hexadecimal = ''
-    for s in range(6):
-        hexadecimal += symbols[randint(0, len(symbols))]
-    return hexadecimal
+    lst = []
+    for s in range(num):
+        hexadecimal = ''
+        for s in range(6):
+            hexadecimal += symbols[randint(0, len(symbols))]
+        lst.append(hexadecimal)
+    return lst
 
 
-def list_of_rgb_colors():
-    pass
+def list_of_rgb_colors(num):
+    lst = []
+    for s in range(num):
+        lst.append(rgb_color_gen())
+    return lst
+
+
+def generate_colors(form, number):
+    if form == 'hexa':
+        return list_of_hexa_colors(number)
+    elif form == 'rgb':
+        return list_of_rgb_colors(number)
+    else:
+        return []
+
+
+def shuffle_list(lst):
+    shuffled = lst.copy()
+    random.shuffle(shuffled)
+    return shuffled
+
+
+def seven_random_numbers():
+    lst = []
+    while len(lst) < 7:
+        random_num = randint(0, 9)
+        if random_num not in lst:
+            lst.append(random_num)
+    return lst
