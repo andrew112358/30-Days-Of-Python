@@ -61,3 +61,48 @@ print(add_two_nums(2, 3))
 add_two_nums = lambda a, b: a + b
 print(add_two_nums(2, 3))
 
+# ? self invoking lambda function
+(lambda a, b : a + b)(2, 3) # 5 - need to encapsulate in print()
+
+square = lambda x : x ** 2
+print(square(3))
+cube = lambda x : x ** 3
+print(cube(3))
+
+multiple_variable = lambda a, b, c: a ** 2 - 3 * b + 4 * c
+print(multiple_variable(5,5,3))
+
+# ? lambda function inside antoehr function
+def power(x):
+    return lambda n : x ** n
+
+cube = power(2)(3) # ! power function now needs two variables bc of lambda inside
+print(cube)
+two_power_of_five = power(2)(5)
+print(two_power_of_five)
+
+# ! EXERCISES
+numbers = [-4, -3, -2, -1, 0, 2, 4, 6]
+negative_and_zero = [i for i in numbers if i <= 0]
+print(negative_and_zero)
+
+list_of_lists =[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+output = [number for row in list_of_lists for number in row]
+print(output)
+
+list_of_tuples = [(i, *(i**p for p in range(6))) for i in range(11)]
+
+countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
+flattened_countries = [country for row in countries for country in row]
+print(flattened_countries)
+
+countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
+output = [{'country': country.upper(), 'city': city.upper()} for row in countries for country, city in row]
+print(output)
+
+names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
+output = [f'{first}, {last}' for row in names for first, last in row]
+print(output)
+
+y_intercept = lambda x1, x2, y1, y2: (y2 - y1) / (x2 - x1)
